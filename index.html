@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tebak Angka</title>
+</head>
+
+<body>
+    <script>
+        function acakNumber() {
+            return Math.floor(Math.random() * 11);
+        }
+
+        const komputer = acakNumber();
+        alert(`tebak angka dari 1 sampai 10 
+        \nkamu punya 3 kesempatan`);
+
+        for (let kesempatan = 3; kesempatan > 0; kesempatan--) {
+            let pemain = Number(prompt('Masukan angka '));
+        
+            if (pemain === komputer) {
+                alert(`Selamat anda benar menebaknya. Angka yang ditebak adalah ${komputer}`);
+                break;
+            } else if (pemain < komputer) {
+                alert(`Maaf tebakan mu terlalu kecil. Angka yang benar adalah ${komputer} 
+                \nkamu punya ${kesempatan - 1} kesempatan`);
+            } else {
+                alert(`Maaf tebakan mu terlalu besar. Angka yang benar adalah ${komputer} 
+                \nkamu punya ${kesempatan - 1} kesempatan`)
+            } 
+        }
+        alert(`Hmmm,, sayang sekali kesempatan menebakmu sudah habis`);
+    </script>
+</body>
+
+</html>
