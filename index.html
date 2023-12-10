@@ -14,28 +14,31 @@
 
         let pemain;
         let kesempatan = 3;
-        const komputer = Math.floor(Math.random()*10)+1;
+        const komputer = Math.floor(Math.random() * 10) + 1;
 
         while (kesempatan >= 0) {
             pemain = Number(prompt('Masukkan angka lo'));
             kesempatan--
-
-            if (pemain === komputer) {
-                alert(`Selamat anda benar menebaknya. Angka yang ditebak adalah ${komputer}`);
-                break;
-            } else if (kesempatan === 0) {
-                alert(`Hmmm,, sayang sekali kesempatan menebakmu sudah habis. Anda sudah gagal 3x
-                \nAngka yang benar adalah ${komputer}`);
-                break;
-            } else if (pemain < komputer) {
-                alert(`Maaf tebakan mu terlalu kecil.
-                \nkamu punya ${kesempatan} kesempatan`);
-            } else {
-                alert(`Maaf tebakan mu terlalu besar.  
-                \nkamu punya ${kesempatan} kesempatan`)
-            }
-        }
-        
+                if (pemain >= 1 && pemain <= 10) {
+                    if (pemain === komputer) {
+                        alert(`Selamat anda benar menebaknya. Angka yang ditebak adalah ${komputer}`);
+                        break; // w tambahin break soalnya while nya >=
+                    } else if (kesempatan === 0) {
+                        alert(`Hmmm,, sayang sekali kesempatan menebakmu sudah habis. Anda sudah gagal 3x
+                        \nAngka yang benar adalah ${komputer}`);
+                        break;
+                    } else if (pemain < komputer) {
+                        alert(`Maaf tebakan mu terlalu kecil.
+                        \nkamu punya ${kesempatan} kesempatan`);
+                    } else {
+                        alert(`Maaf tebakan mu terlalu besar.  
+                        \nkamu punya ${kesempatan} kesempatan`)
+                    }
+                } else {
+                    alert(`Mohon masukkan angka antara 1 dan 10.
+                    \nkamu punya ${kesempatan} kesempatan`);
+                }
+            } 
     </script>
 </body>
 
